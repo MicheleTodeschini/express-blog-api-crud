@@ -3,28 +3,16 @@ const router = express.Router()
 
 // Per richiamarli su Postman, usare http://localhost:3000/api/posts/
 
-router.get('/', (req, res) => {
-    res.send('show all the posts here')
-})
+router.get('/', articoliController.index)
 
-router.get('/:id', (req, res) => {
-    res.send(`Show the post with id: ${req.params.id}`)
-})
+router.get('/:id', articoliController.show)
 
-router.post('/', (req, res) => {
-    res.send('Store a new post here')
-})
+router.post('/', articoliController.store)
 
-router.put('/:id', (req, res) => {
-    res.send(`Update the post with id: ${req.params.id}`)
-})
+router.put('/:id', articoliController.update)
 
-router.patch('/:id', (req, res) => {
-    res.send(`modify the post with id: ${req.params.id}`)
-})
+router.patch('/:id', articoliController.modify)
 
-router.delete('/:id', (req, res) => {
-    res.send(`Delete the post with id: ${req.params.id}`)
-})
+router.delete('/:id', articoliController.destroy)
 
 module.exports = router
