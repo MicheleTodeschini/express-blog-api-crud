@@ -8,7 +8,25 @@ const index = (req, res) => {
 }
 
 const show = (req, res) => {
-    res.send(`Show the post with id: ${req.params.id}`)
+    const id = Number(req.params.id)
+
+    //const foundArticolo = articoliRicette.find(articolo => articolo.id === id)
+
+
+    let foundArticolo = []
+
+    for (let i = 0; i < articoliRicette.length; i++) {
+        if (articoliRicette.id === id) {
+            foundArticolo.push(articoliRicette[i])
+            return foundArticolo
+        }
+
+    }
+
+    res.json(foundArticolo)
+    console.log(foundArticolo);
+
+
 }
 
 const store = (req, res) => {
