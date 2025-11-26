@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
+const articoliController = require('../controllers/articoliController')
+
 
 // Per richiamarli su Postman, usare http://localhost:3000/api/posts/
 
