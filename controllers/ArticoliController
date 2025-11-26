@@ -43,7 +43,15 @@ const modify = (req, res) => {
 }
 
 const destroy = (req, res) => {
-    res.send(`Delete the post with id: ${req.params.id}`)
+    const id = Number(req.params.id)
+    console.log(id);
+
+    const foundArticolo = articoliRicette.find(articolo => articolo.id === id)
+
+    articoliRicette.splice(articoliRicette.indexOf(foundArticolo), 1)
+    console.log(articoliRicette);
+
+    res.sendStatus(204)
 }
 
 module.exports = {
