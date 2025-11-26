@@ -1,9 +1,10 @@
 
-
+const articoliRicette = require('../data/ArticoliRicette')
 const posts = require('../routers/posts')
 
 const index = (req, res) => {
-    res.send('show all the posts here')
+
+    res.json(articoliRicette)
 }
 
 const show = (req, res) => {
