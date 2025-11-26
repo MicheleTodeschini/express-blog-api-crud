@@ -9,19 +9,20 @@ const index = (req, res) => {
 
 const show = (req, res) => {
     const id = Number(req.params.id)
+    console.log(id);
 
-    //const foundArticolo = articoliRicette.find(articolo => articolo.id === id)
+    const foundArticolo = articoliRicette.find(articolo => articolo.id === id)
 
 
-    let foundArticolo = []
+    {/*    let foundArticolo = {}
 
     for (let i = 0; i < articoliRicette.length; i++) {
-        if (articoliRicette.id === id) {
-            foundArticolo.push(articoliRicette[i])
-            return foundArticolo
+        if (articoliRicette[i].id === id) {
+            foundArticolo = articoliRicette[i]
+
         }
 
-    }
+    }*/}
 
     res.json(foundArticolo)
     console.log(foundArticolo);
