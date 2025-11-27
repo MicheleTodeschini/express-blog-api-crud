@@ -42,7 +42,7 @@ const show = (req, res) => {
 const store = (req, res) => {
     const nuovoArticolo = {
         id: Date.now(),
-        ...req.Body
+        ...req.body
     }
 
     console.log(nuovoArticolo);
@@ -55,7 +55,9 @@ const store = (req, res) => {
 
 const update = (req, res) => {
     const id = Number(req.params.id)
-    const postData = req.body
+    const articoloData = {
+        ...req.body
+    }
 
     const foundPost = articoliRicette.find(post => post.id === id)
 
@@ -66,7 +68,9 @@ const update = (req, res) => {
         })
     }
 
-    articoliRicette.push(foundPost, postData)
+    foundPost.title = articoloData.title
+    foundPost.content = articoloData.content
+    foundPost.tags = articoloData.tags
 
     res.json(foundPost)
 
