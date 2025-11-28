@@ -12,4 +12,5 @@ app.listen(PORT, () => {
 
 })
 
+app.use(notFound)
 app.use('/api/posts', postRouter)
