@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 app.use(express.json())
 const notFound = require('./middlewares/notFound')
+const error = require('./middlewares/error')
 
 const PORT = 3000
 
@@ -14,4 +15,5 @@ app.listen(PORT, () => {
 })
 
 app.use(notFound)
+app.use(error)
 app.use('/api/posts', postRouter)
